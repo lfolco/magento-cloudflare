@@ -60,7 +60,7 @@
 			$endpoint = sprintf ( "zones/%s/%s", $zoneId, $this->_endpoint );
 			$api = Mage::getModel ("cloudflare/api_request");
 			$api->setType ( $api::REQUEST_PATCH );
-			$api->setData ( array ( "$this->_dataKey" => $value ) );
+			$api->setPostData ( array ( "$this->_dataKey" => $value ) );
 			return $api->resolve ( $endpoint );
 		}
 

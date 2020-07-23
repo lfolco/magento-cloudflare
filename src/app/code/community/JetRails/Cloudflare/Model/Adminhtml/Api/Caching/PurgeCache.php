@@ -25,7 +25,7 @@
 			$endpoint = sprintf ( "zones/%s/purge_cache", $zoneId );
 			$api = Mage::getModel ("cloudflare/api_request");
 			$api->setType ( $api::REQUEST_DELETE );
-			$api->setData ( array ( "purge_everything" => true ) );
+			$api->setPostData ( array ( "purge_everything" => true ) );
 			return $api->resolve ( $endpoint );
 		}
 
@@ -42,7 +42,7 @@
 			$endpoint = sprintf ( "zones/%s/purge_cache", $zoneId );
 			$api = Mage::getModel ("cloudflare/api_request");
 			$api->setType ( $api::REQUEST_DELETE );
-			$api->setData ( array ( "files" => $urls ) );
+			$api->setPostData ( array ( "files" => $urls ) );
 			return $api->resolve ( $endpoint );
 		}
 
